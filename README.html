@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Contador de Wins</title>
+  <style>
+    body {
+      background-color: black; /* puedes dejarlo transparente si quieres overlay */
+      font-family: Arial, sans-serif;
+      text-align: center;
+      color: white;
+    }
+    #contador {
+      font-size: 100px;
+      font-weight: bold;
+      margin: 40px 0;
+    }
+    button {
+      font-size: 24px;
+      margin: 10px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <!-- Aquí aparece el número -->
+  <div id="contador">0</div>
+
+  <!-- Botones -->
+  <button onclick="sumar()">+ Win</button>
+  <button onclick="reset()">Reset</button>
+
+  <script>
+    let wins = 0;
+
+    function mostrar() {
+      document.getElementById("contador").innerHTML = wins;
+    }
+
+    function sumar() {
+      wins++;
+      mostrar();
+    }
+
+    function reset() {
+      wins = 0;
+      mostrar();
+    }
+
+    // Mostrar el valor inicial al cargar
+    mostrar();
+  </script>
+</body>
+</html>
